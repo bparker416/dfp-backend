@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AppetizerController {
 
     private final AppetizerService appetizerService;
@@ -20,7 +21,6 @@ public class AppetizerController {
     public AppetizerController(AppetizerService appetizerService) { this.appetizerService = appetizerService; }
 
     @GetMapping("/appetizer")
-    @CrossOrigin(origins = "http://localhost:4200")
     public List<Appetizer> getAllAppetizer() { return appetizerService.getAllAppetizer(); }
 
 }

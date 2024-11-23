@@ -8,29 +8,30 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Appetizer")
+@Table(name = "Sides")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Appetizer {
+public class Side {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer app_id;
+    private Integer side_id;
 
-    @Column(name = "app_name")
+    @Column(name = "side_name")
     @NotNull
-    private String app_name;
+    private String side_name;
 
-    @Column(name = "app_description")
+    @Column(name = "side_description")
     @NotNull
-    private String app_description;
+    private String side_description;
 
-    @Column(name = "app_price")
+    @Column(name = "side_price")
     @NotNull
-    private Integer app_price;
+    private Integer side_price;
 
     @Column(name = "additional_text")
     private String additional_text;
+
 }
