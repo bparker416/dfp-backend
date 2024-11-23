@@ -1,4 +1,9 @@
 package com.damnfinepizzapo.damn_fine_backend.repository;
 
-public interface SaladRepository {
+import com.damnfinepizzapo.damn_fine_backend.entity.Salad;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface SaladRepository extends JpaRepository<Salad, Integer> {
 }
