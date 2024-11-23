@@ -1,4 +1,7 @@
 package com.damnfinepizzapo.damn_fine_backend.repository;
 
-public interface CheeseRepository {
+import com.damnfinepizzapo.damn_fine_backend.entity.Cheese;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CheeseRepository extends JpaRepository<Cheese, Integer> {
 }
