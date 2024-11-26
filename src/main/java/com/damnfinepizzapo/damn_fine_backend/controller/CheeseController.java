@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 // Need to update get mapping to group and return by cheese_price
-
+/*
 @RestController
 @RequestMapping("/api/")
 @CrossOrigin(origins = "http://localhost:4200")
@@ -26,3 +26,4 @@ public class CheeseController {
     public List<Cheese> getAllCheese() {return cheeseService.getAllCheese();}
 
 }
+*/

@@ -1,11 +1,18 @@
 package com.damnfinepizzapo.damn_fine_backend.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Entity
+@Table(name = "veggie")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Veggie {
 
     @Id
