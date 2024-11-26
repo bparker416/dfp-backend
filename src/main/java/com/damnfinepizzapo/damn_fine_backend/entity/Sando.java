@@ -33,4 +33,8 @@ public class Sando {
 
     @Column(name = "additional_text")
     private String additional_text;
+
+    @Column(name = "sando_active")
+    private boolean sando_active;
+
 }

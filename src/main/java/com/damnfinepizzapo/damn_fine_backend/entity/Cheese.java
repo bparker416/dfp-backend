@@ -25,4 +25,8 @@ public class Cheese {
 
     @Column(name = "cheese_price")
     private Integer cheese_price;
+
+    @Column(name = "cheese_active")
+    private Boolean cheese_active;
+
 }

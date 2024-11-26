@@ -38,4 +38,7 @@ public class Pizza {
     @Column(name = "additional_text")
     private String additional_text;
 
+    @Column(name = "pizza_active")
+    private boolean pizza_active;
+
 }

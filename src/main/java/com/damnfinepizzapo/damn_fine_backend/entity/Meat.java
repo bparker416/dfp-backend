@@ -29,4 +29,7 @@ public class Meat {
     @Column(name = "meat_price")
     @NotNull
     private Integer meat_price;
+
+    @Column(name = "meat_active")
+    private boolean meat_active;
 }

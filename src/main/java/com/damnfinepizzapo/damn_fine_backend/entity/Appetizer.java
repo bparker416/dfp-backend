@@ -33,4 +33,8 @@ public class Appetizer {
 
     @Column(name = "additional_text")
     private String additional_text;
+
+    @Column(name = "appetizer_active")
+    private boolean appetizer_active;
+
 }

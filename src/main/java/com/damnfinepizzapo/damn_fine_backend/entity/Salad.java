@@ -37,4 +37,7 @@ public class Salad {
     @Column(name = "additional_text")
     private String additional_text;
 
+    @Column(name = "salad_active")
+    private Boolean salad_active;
+
 }

@@ -33,4 +33,8 @@ public class Dessert {
 
     @Column(name = "additional_text")
     private String additional_text;
+
+    @Column(name = "dessert_active")
+    private Boolean dessert_active;
+
 }

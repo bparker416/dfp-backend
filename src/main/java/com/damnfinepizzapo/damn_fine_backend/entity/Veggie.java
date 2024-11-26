@@ -25,4 +25,8 @@ public class Veggie {
 
     @Column(name = "veggie_description")
     private String veggie_description;
+
+    @Column(name = "veggie_active")
+    private boolean veggie_active;
+    
 }

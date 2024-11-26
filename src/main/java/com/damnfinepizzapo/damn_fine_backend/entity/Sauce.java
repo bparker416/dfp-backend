@@ -20,4 +20,8 @@ public class Sauce {
 
     @Column(name = "sauce_name")
     private String sauce_name;
+
+    @Column(name = "sauce_active")
+    private boolean sauce_active;
+
 }

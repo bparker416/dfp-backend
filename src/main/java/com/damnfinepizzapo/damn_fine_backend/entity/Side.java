@@ -34,4 +34,7 @@ public class Side {
     @Column(name = "additional_text")
     private String additional_text;
 
+    @Column(name = "side_active")
+    private Boolean side_active;
+
 }
