@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 // Need to update get mapping to group and return by cheese_price
-/*
+
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/cheese")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CheeseController {
 
@@ -22,8 +22,13 @@ public class CheeseController {
     @Autowired
     public CheeseController(CheeseService cheeseService) {this.cheeseService = cheeseService;}
 
-    @GetMapping("/cheese")
-    public List<Cheese> getAllCheese() {return cheeseService.getAllCheese();}
+    @GetMapping("/price-is-regular")
+    public List<Cheese> findByPriceIsRegular() {return cheeseService.findByPriceIsRegular();}
+
+    @GetMapping("/price-is-one")
+    public List<Cheese> findByPriceIsOne() {return cheeseService.findByPriceIsOne();}
+
+    @GetMapping("price-is-two")
+    public List<Cheese> findByPriceIsTwo() {return cheeseService.findByPriceIsTwo();}
 
 }
-*/
