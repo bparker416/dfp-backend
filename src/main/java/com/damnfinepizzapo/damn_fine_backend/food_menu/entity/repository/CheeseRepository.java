@@ -9,10 +9,10 @@ import java.util.List;
 
 @Repository
 public interface CheeseRepository extends JpaRepository<Cheese, Integer> {
-    @Query("SELECT c FROM Cheese c WHERE c.cheese_price IS NULL")
+    @Query("SELECT c FROM Cheese c WHERE c.cheese_price IS NULL AND c.cheese_active = true")
     List<Cheese> findByPriceIsRegular();
-    @Query("SELECT c FROM Cheese c WHERE c.cheese_price = 1")
+    @Query("SELECT c FROM Cheese c WHERE c.cheese_price = 1 AND c.cheese_active = true")
     List<Cheese> findByPriceIsOne();
-    @Query("SELECT c FROM Cheese c WHERE c.cheese_price = 2")
+    @Query("SELECT c FROM Cheese c WHERE c.cheese_price = 2 AND c.cheese_active = true")
     List<Cheese> findByPriceIsTwo();
 }

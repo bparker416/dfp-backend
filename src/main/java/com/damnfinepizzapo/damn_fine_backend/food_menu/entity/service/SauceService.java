@@ -16,6 +16,6 @@ public class SauceService {
     public SauceService(SauceRepository sauceRepository) { this.sauceRepository = sauceRepository; }
 
     public List<Sauce> getAllSauces() {
-        return sauceRepository.findAll();
+        return sauceRepository.findAllActive();
     }
 }

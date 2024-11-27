@@ -15,6 +15,6 @@ public class DessertService {
     @Autowired
     public DessertService(DessertRepository dessertRepository) { this.dessertRepository = dessertRepository; }
 
-    public List<Dessert> getAllDesserts() { return dessertRepository.findAll(); }
+    public List<Dessert> getAllDesserts() { return dessertRepository.findAllActive(); }
 
 }

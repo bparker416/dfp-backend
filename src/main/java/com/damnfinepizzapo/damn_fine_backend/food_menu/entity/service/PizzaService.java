@@ -18,6 +18,6 @@ public class PizzaService {
     }
 
     public List<Pizza> getAllPizza() {
-        return pizzaRepository.findAll();
+        return pizzaRepository.findAllPizza();
     }
 }

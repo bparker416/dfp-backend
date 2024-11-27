@@ -16,7 +16,7 @@ public class AppetizerService {
     public AppetizerService(AppetizerRepository appetizerRepository) { this.appetizerRepository = appetizerRepository; }
 
     public List<Appetizer> getAllAppetizer() {
-        return appetizerRepository.findAll();
+        return appetizerRepository.findAllAppetizer();
     }
 
 }
