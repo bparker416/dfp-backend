@@ -1,6 +1,7 @@
 package com.damnfinepizzapo.damn_fine_backend.food_menu.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class Sauce {
     private Integer sauce_id;
 
     @Column(name = "sauce_name")
+    @NotNull
     private String sauce_name;
 
     @Column(name = "sauce_active")
