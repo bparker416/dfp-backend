@@ -23,7 +23,7 @@ public class Sando {
     @NotNull
     private String sando_name;
 
-    @Column(name = "sando_desription")
+    @Column(name = "sando_description")
     @NotNull
     private String sando_description;
 
