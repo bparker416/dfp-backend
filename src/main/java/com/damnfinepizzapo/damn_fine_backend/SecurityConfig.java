@@ -22,9 +22,11 @@ public class SecurityConfig {
         http.authorizeHttpRequests(
                 (authz) -> authz
                         .requestMatchers("/api/update-page/**").hasRole("ADMIN")
-                        .requestMatchers("/api/update-page/**").hasRole("USER")
+                        .requestMatchers("/api/**").permitAll()
                         .anyRequest().authenticated()
-        );
+        )
+                .csrf().disable();
+
         return http.build();
     }
 }
