@@ -13,7 +13,7 @@ import java.util.List;
 // Need to update get mapping to group and return by cheese_price
 
 @RestController
-@RequestMapping("/api/cheese")
+@RequestMapping("/api/public/cheese")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CheeseController {
 

@@ -21,8 +21,8 @@ public class SecurityConfig {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(
                 (authz) -> authz
-                        .requestMatchers("/api/update-page/**").hasRole("ADMIN")
-                        .requestMatchers("/api/**").permitAll()
+                        .requestMatchers("/api/private/**").hasRole("ADMIN")
+                        .requestMatchers("/api/public/**").permitAll()
                         .anyRequest().authenticated()
         )
                 .csrf().disable();

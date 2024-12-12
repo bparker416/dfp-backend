@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 public class HomeController {
 
-    @GetMapping("/home")
+    @GetMapping("/public/home")
     public String home() {
         return "Home page.";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/public/login")
     public String login() {
         return "Login page.";
     }
 
-    @GetMapping("/updates")
+    @GetMapping("/private/updates")
     public String updatePage() {
         return "Updates page.";
     }

@@ -11,7 +11,7 @@ import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.service.PizzaServi
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/public")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PizzaController {
 

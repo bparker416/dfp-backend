@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/meat/")
+@RequestMapping("/api/public/meat")
 @CrossOrigin(origins = "http://localhost:4200")
 public class MeatController {
 
