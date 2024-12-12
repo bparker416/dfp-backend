@@ -20,4 +20,9 @@ public class HomeController {
         return "Login page.";
     }
 
+    @GetMapping("/updates")
+    public String updatePage() {
+        return "Updates page.";
+    }
+
 }
