@@ -14,7 +14,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public String registerUser(@RequestParam String username, @RequestParam String password) {
+    public String registerUser(@RequestParam String username, @RequestParam String password) throws IllegalAccessException {
         userService.registerUser(username, password);
         return "Success!";
     }
