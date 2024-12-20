@@ -1,13 +1,11 @@
 package com.damnfinepizzapo.damn_fine_backend.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/private/users")
+@RequestMapping("/api/public")
+@CrossOrigin("http://localhost:4200")
 public class UserController {
 
     @Autowired

@@ -32,4 +32,10 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .password(user.get().getPassword())
                 .build();
     }
+
+    public boolean validateCredentials(String username, String rawPassword) {
+        return userRepository.findByUsername(username)
+                .map(user -> passwordEncoder.matches(rawPassword, user.getPassword()))
+                .orElse(false);
+    }
 }
