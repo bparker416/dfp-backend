@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SideService {
@@ -19,4 +20,25 @@ public class SideService {
         return sideRepository.findAllSides();
     }
 
+    public Side createSide(Side side) {
+        return sideRepository.save(side);
+    }
+
+    public Optional<Side> getSideById(int id) {
+        return sideRepository.findById(id);
+    }
+
+    // Toggle side_active
+    public Side updateSide(int id, Side side) {
+        return sideRepository.findById(id)
+                .map(item -> {
+                    item.setSide_name(side.getSide_name());
+                    item.setSide_price(side.getSide_price());
+                    item.setSide_description(side.getSide_description());
+                    item.setAdditional_text(side.getAdditional_text());
+                    item.setSide_active(side.getSide_active());
+                    return sideRepository.save(item);
+                })
+                .orElseThrow(() -> new RuntimeException("Item not found."));
+    }
 }

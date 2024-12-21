@@ -23,4 +23,7 @@ public class HouseCocktailController {
 
     @GetMapping("/house-cocktails")
     public List<HouseCocktail> getAllHouseCocktails() { return houseCocktailService.getAllHouseCocktails(); }
+
+
     }
+
