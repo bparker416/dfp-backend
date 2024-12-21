@@ -39,13 +39,13 @@ public class AuthController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        return ResponseEntity.ok("Login successful!");
+        return ResponseEntity.ok(new AuthResponse("Login successful!"));
     }
 
     @PostMapping("/logout")
     public ResponseEntity<?> logout(HttpSession session) {
         session.invalidate();
-        return ResponseEntity.ok("Logout successful@");
+        return ResponseEntity.ok("Logout successful!");
     }
 
 }
