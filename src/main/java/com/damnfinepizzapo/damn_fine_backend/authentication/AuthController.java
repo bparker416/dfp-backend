@@ -21,23 +21,22 @@ import javax.naming.AuthenticationException;
 @CrossOrigin(origins = "http://localhost:4200")
 public class AuthController {
 
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
     private UserRepository userRepository;
 
     private PasswordEncoder passwordEncoder;
 
+    private AuthController(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
+
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest, HttpSession session) {
+    public ResponseEntity<?> login(@RequestParam String username, @RequestParam String password, HttpSession session) {
 
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        loginRequest.getUsername(),
-                        loginRequest.getPassword()
-                )
+                new UsernamePasswordAuthenticationToken(username, password)
         );
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
 
         return ResponseEntity.ok(new AuthResponse("Login successful!"));
     }
