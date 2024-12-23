@@ -35,6 +35,10 @@ public class DessertService {
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
 
+    public void deleteDessert(int id) {
+        dessertRepository.deleteById(id);
+    }
+
     // Toggle dessert_active
     public Dessert toggleDessertActive(int id) {
         return dessertRepository.findById(id)

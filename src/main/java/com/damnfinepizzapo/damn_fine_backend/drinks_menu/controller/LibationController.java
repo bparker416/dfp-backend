@@ -2,11 +2,9 @@ package com.damnfinepizzapo.damn_fine_backend.drinks_menu.controller;
 
 import com.damnfinepizzapo.damn_fine_backend.drinks_menu.entity.Libation;
 import com.damnfinepizzapo.damn_fine_backend.drinks_menu.service.LibationService;
+import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.Appetizer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,4 +20,31 @@ public class LibationController {
 
     @GetMapping("seasonal-libations")
     public List<Libation> getAllLibations() { return libationService.getLibations(); }
+
+    @PutMapping
+    public Libation createLibation(@RequestBody Libation libation) {
+        return libationService
+                .createLibation(libation);
+    }
+
+    @GetMapping("/{id}")
+    public Libation getLibationById(@PathVariable int id) {
+        return libationService.getLibationById(id).orElseThrow(
+                () -> new RuntimeException("Item not found.")
+        );
+    }
+
+    @PutMapping("/{id}")
+    public Libation updateLibation(@PathVariable int id, @RequestBody Libation libation) {
+        return libationService.updateLibation(id, libation);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteLibation(@PathVariable int id) {
+        libationService.deleteLibation(id);
+    }
+
+    // Endpoint for isActive toggle
+    @PutMapping("/{id}/toggle")
+    public Libation toggleLibationActive(@PathVariable int id) { return toggleLibationActive(id); }
 }

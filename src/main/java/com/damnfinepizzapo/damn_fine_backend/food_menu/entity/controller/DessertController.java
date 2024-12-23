@@ -3,10 +3,7 @@ package com.damnfinepizzapo.damn_fine_backend.food_menu.entity.controller;
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.Dessert;
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.service.DessertService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +19,33 @@ public class DessertController {
 
     @GetMapping("/dessert")
     public List<Dessert> getDesserts() { return dessertService.getAllDesserts(); }
+
+    @PostMapping
+    public Dessert createDessert(@RequestBody Dessert dessert) {
+        return dessertService.createDessert(dessert);
+    }
+
+    @GetMapping("/{id}")
+    public Dessert getDessertById(@PathVariable int id) {
+        return dessertService.getDessertById(id).orElseThrow(
+                () -> new RuntimeException("Item not found.")
+        );
+    }
+
+    @PutMapping("/{id}")
+    public Dessert updateDessert(@PathVariable int id, @RequestBody Dessert dessert) {
+        return dessertService.updateDessert(id, dessert);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteDessert(@PathVariable int id) {
+        dessertService.deleteDessert(id);
+    }
+
+    // Endpoint for isActive toggle
+    @PutMapping("/{id}/toggle")
+    public Dessert toggleDessertActive(@PathVariable int id) {
+        return dessertService.toggleDessertActive(id);
+    }
 
 }

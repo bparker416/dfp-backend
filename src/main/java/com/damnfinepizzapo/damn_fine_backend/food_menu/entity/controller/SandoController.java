@@ -3,10 +3,7 @@ package com.damnfinepizzapo.damn_fine_backend.food_menu.entity.controller;
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.Sando;
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.service.SandoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +19,31 @@ public class SandoController {
 
     @GetMapping("/sando")
     public List<Sando> getAllSandos() { return sandoService.getAllSandos(); }
+
+    @PostMapping
+    public Sando createSando(@RequestBody Sando sando) {
+        return sandoService.createSando(sando);
+    }
+
+    @GetMapping("/[id}")
+    public Sando getSandoById(@PathVariable int id) {
+        return sandoService.getSandoById(id).orElseThrow(
+                () -> new RuntimeException("Item not found.")
+        );
+    }
+
+    @PutMapping("/{id}")
+    public Sando updateSando(@PathVariable int id, @RequestBody Sando sando) {
+        return sandoService.updateSando(id, sando);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteSando(@PathVariable int id) {
+        sandoService.deleteSando(id);
+    }
+
+    // Endpoint for isActive toggle
+    @PutMapping("/{id}/toggle")
+    public Sando toggleSandoActive(@PathVariable int id) { return sandoService.toggleSandoActive(id); }
 
 }

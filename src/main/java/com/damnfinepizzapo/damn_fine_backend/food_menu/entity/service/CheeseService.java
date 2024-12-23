@@ -32,7 +32,7 @@ public class CheeseService {
         return cheeseRepository.save(cheese);
     }
 
-    public Optional<Cheese> getDrinkById(int id) {
+    public Optional<Cheese> getCheeseById(int id) {
         return cheeseRepository.findById(id);
     }
 

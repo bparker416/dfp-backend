@@ -26,7 +26,7 @@ public class PizzaService {
         return pizzaRepository.save(pizza);
     }
 
-    public Optional<Pizza> getDrinkById(int id) {
+    public Optional<Pizza> getPizzaById(int id) {
         return pizzaRepository.findById(id);
     }
 

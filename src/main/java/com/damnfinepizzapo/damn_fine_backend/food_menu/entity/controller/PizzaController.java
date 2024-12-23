@@ -2,10 +2,7 @@ package com.damnfinepizzapo.damn_fine_backend.food_menu.entity.controller;
 
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.Pizza;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.service.PizzaService;
 
 import java.util.List;
@@ -25,6 +22,34 @@ public class PizzaController {
     @GetMapping("/pizza")
     public List<Pizza> getAllPizza() {
         return pizzaService.getAllPizza();
+    }
+
+    @PostMapping
+    public Pizza createPizza(@RequestBody Pizza pizza) {
+        return pizzaService.createPizza(pizza);
+    }
+
+    @GetMapping("/{id}")
+    public Pizza getPizzaById(@PathVariable int id) {
+        return pizzaService.getPizzaById(id).orElseThrow(
+                () -> new RuntimeException("Item not found.")
+        );
+    }
+
+    @PutMapping("/{id}")
+    public Pizza updatePizza(@PathVariable int id, @RequestBody Pizza pizza) {
+        return pizzaService.updatePizza(id, pizza);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletePizza(@PathVariable int id) {
+        pizzaService.deletePizza(id);
+    }
+
+    // Endpoint for isActive toggle
+    @PutMapping("/{id}/toggle")
+    public Pizza togglePizzaActive(@PathVariable int id) {
+        return pizzaService.togglePizzaActive(id);
     }
 
 }

@@ -3,10 +3,7 @@ package com.damnfinepizzapo.damn_fine_backend.food_menu.entity.controller;
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.Veggie;
 import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.service.VeggieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +19,33 @@ public class VeggieController {
 
     @GetMapping("/veggie")
     public List<Veggie> getVeggies() { return veggieService.getAllVeggies(); }
+
+    @PostMapping
+    public Veggie createVeggie(@RequestBody Veggie veggie) {
+        return veggieService.createVeggie(veggie);
+    }
+
+    @GetMapping("/{id}")
+    public Veggie getVeggieById(@PathVariable int id) {
+        return veggieService.getVeggieById(id).orElseThrow(
+                () -> new RuntimeException("Item not found.")
+        );
+    }
+
+    @PutMapping("/{id}")
+    public Veggie updateVeggie(@PathVariable int id, @RequestBody Veggie veggie) {
+        return veggieService.updateVeggie(id, veggie);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteVeggie(@PathVariable int id) {
+        veggieService.deleteVeggie(id);
+    }
+
+    // Endpoint for isActive toggle
+    @PutMapping("/{id}/toggle")
+    public Veggie toggleVeggieActive(@PathVariable int id) {
+        return veggieService.toggleVeggieActive(id);
+    }
 
 }

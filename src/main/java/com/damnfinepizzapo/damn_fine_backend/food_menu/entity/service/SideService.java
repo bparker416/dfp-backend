@@ -28,7 +28,10 @@ public class SideService {
         return sideRepository.findById(id);
     }
 
-    // Toggle side_active
+    public void deleteSide(int id) {
+        sideRepository.deleteById(id);
+    }
+
     public Side updateSide(int id, Side side) {
         return sideRepository.findById(id)
                 .map(item -> {
@@ -37,6 +40,16 @@ public class SideService {
                     item.setSide_description(side.getSide_description());
                     item.setAdditional_text(side.getAdditional_text());
                     item.setSide_active(side.getSide_active());
+                    return sideRepository.save(item);
+                })
+                .orElseThrow(() -> new RuntimeException("Item not found."));
+    }
+
+    // Toggle side_active
+    public Side toggleSideActive(int id) {
+        return sideRepository.findById(id)
+                .map(item -> {
+                    item.setSide_active(!item.getSide_active());
                     return sideRepository.save(item);
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
