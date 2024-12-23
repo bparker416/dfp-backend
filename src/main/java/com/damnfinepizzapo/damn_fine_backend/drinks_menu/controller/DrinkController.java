@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public")
+@RequestMapping("/api/public/drinks")
 @CrossOrigin(origins = "http://localhost:4200")
 public class DrinkController {
 
@@ -22,7 +22,7 @@ public class DrinkController {
         this.cheeseService = cheeseService;
     }
 
-    @GetMapping("/drinks")
+    @GetMapping
     public List<Drink> getAllDrinks() { return drinkService.getAllDrinks(); }
 
     @PostMapping

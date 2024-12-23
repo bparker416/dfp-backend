@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public")
+@RequestMapping("/api/public/seasonal-libations")
 @CrossOrigin(origins = "http://localhost:4200")
 public class LibationController {
 
@@ -18,7 +18,7 @@ public class LibationController {
     @Autowired
     public LibationController(LibationService libationService) { this.libationService = libationService; }
 
-    @GetMapping("seasonal-libations")
+    @GetMapping
     public List<Libation> getAllLibations() { return libationService.getLibations(); }
 
     @PutMapping
@@ -46,5 +46,5 @@ public class LibationController {
 
     // Endpoint for isActive toggle
     @PutMapping("/{id}/toggle")
-    public Libation toggleLibationActive(@PathVariable int id) { return toggleLibationActive(id); }
+    public Libation toggleLibationActive(@PathVariable int id) { return libationService.toggleLibationActive(id); }
 }

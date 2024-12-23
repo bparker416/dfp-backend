@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public")
+@RequestMapping("/api/public/dessert")
 @CrossOrigin(origins = "http://localhost:4200")
 public class DessertController {
 
@@ -17,7 +17,7 @@ public class DessertController {
     @Autowired
     public DessertController(DessertService dessertService) { this.dessertService = dessertService; }
 
-    @GetMapping("/dessert")
+    @GetMapping
     public List<Dessert> getDesserts() { return dessertService.getAllDesserts(); }
 
     @PostMapping

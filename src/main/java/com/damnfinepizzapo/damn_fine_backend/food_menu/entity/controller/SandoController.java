@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public")
+@RequestMapping("/api/public/sando")
 @CrossOrigin(origins = "http://localhost:4200")
 public class SandoController {
 
@@ -17,7 +17,7 @@ public class SandoController {
     @Autowired
     public SandoController(SandoService sandoService) { this.sandoService = sandoService; }
 
-    @GetMapping("/sando")
+    @GetMapping
     public List<Sando> getAllSandos() { return sandoService.getAllSandos(); }
 
     @PostMapping
@@ -25,7 +25,7 @@ public class SandoController {
         return sandoService.createSando(sando);
     }
 
-    @GetMapping("/[id}")
+    @GetMapping("/{id}")
     public Sando getSandoById(@PathVariable int id) {
         return sandoService.getSandoById(id).orElseThrow(
                 () -> new RuntimeException("Item not found.")
