@@ -19,7 +19,7 @@ public class LibationService {
     }
 
     public List<Libation> getLibations() {
-        return libationRepository.findAll();
+        return libationRepository.findAllActive();
     }
 
     public Libation createLibation(Libation libation) {

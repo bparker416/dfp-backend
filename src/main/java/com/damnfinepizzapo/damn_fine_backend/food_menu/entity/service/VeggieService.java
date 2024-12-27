@@ -17,7 +17,7 @@ public class VeggieService {
     public VeggieService(VeggieRepository veggieRepository) { this.veggieRepository = veggieRepository; }
 
     public List<Veggie> getAllVeggies() {
-        return veggieRepository.findAllVeggies();
+        return veggieRepository.findAllActive();
     }
 
     public Veggie createVeggie(Veggie veggie) {

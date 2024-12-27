@@ -19,7 +19,7 @@ public class HouseCocktailService {
     }
 
     public List<HouseCocktail> getAllHouseCocktails() {
-        return houseCocktailRepository.findAll();
+        return houseCocktailRepository.findAllActive();
     }
 
     public HouseCocktail createHouseCocktail(HouseCocktail houseCocktail) {

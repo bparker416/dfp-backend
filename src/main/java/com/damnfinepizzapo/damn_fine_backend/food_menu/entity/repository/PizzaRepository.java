@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface PizzaRepository extends JpaRepository<Pizza, Integer> {
     @Query("SELECT p FROM Pizza p WHERE p.pizza_active = true")
-    List<Pizza> findAllPizza();
+    List<Pizza> findAllActive();
 }

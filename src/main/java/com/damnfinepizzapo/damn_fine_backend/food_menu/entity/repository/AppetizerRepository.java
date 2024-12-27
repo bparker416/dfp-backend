@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface AppetizerRepository extends JpaRepository<Appetizer, Integer> {
     @Query("SELECT a FROM Appetizer a WHERE a.appetizer_active = true")
-    List<Appetizer> findAllAppetizer();
+    List<Appetizer> findAllActive();
 }

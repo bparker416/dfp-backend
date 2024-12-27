@@ -13,4 +13,6 @@ public interface MeatRepository extends JpaRepository<Meat, Integer> {
     List<Meat> findByPriceIsThree();
     @Query("SELECT m FROM Meat m WHERE m.meat_price = 4 AND m.meat_active = true")
     List<Meat> findByPriceIsFour();
+    @Query("SELECT m FROM Meat m WHERE m.meat_active = true")
+    List<Meat> findAllActive();
 }

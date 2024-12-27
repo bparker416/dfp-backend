@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface SideRepository extends JpaRepository<Side, Integer> {
     @Query("SELECT s FROM Side s WHERE s.side_active = true")
-    List<Side> findAllSides();
+    List<Side> findAllActive();
 }

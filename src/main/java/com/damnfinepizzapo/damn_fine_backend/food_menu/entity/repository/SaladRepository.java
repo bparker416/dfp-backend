@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface SaladRepository extends JpaRepository<Salad, Integer> {
     @Query("SELECT s FROM Salad s WHERE s.salad_active = true")
-    List<Salad> findAllSaladActive();
+    List<Salad> findAllActive();
 }

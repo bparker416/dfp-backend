@@ -17,7 +17,7 @@ public class SideService {
     public SideService(SideRepository sideRepository) { this.sideRepository = sideRepository; }
 
     public List<Side> getAllSide() {
-        return sideRepository.findAllSides();
+        return sideRepository.findAllActive();
     }
 
     public Side createSide(Side side) {
