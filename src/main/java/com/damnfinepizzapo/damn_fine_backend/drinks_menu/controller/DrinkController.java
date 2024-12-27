@@ -43,8 +43,8 @@ public class DrinkController {
     }
 
     @DeleteMapping("/{id}")
-    public void updateCheese(@PathVariable int id, @RequestBody Cheese cheese) {
-        cheeseService.updateCheese(id, cheese);
+    public void deleteDrink(@PathVariable int id) {
+        drinkService.deleteDrink(id);
     }
 
     // Endpoint for isActive toggle

@@ -55,7 +55,7 @@ public class SecurityConfig {
                 )
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login", "/auth/logout", "/public/**").permitAll()
+                        .requestMatchers("/auth/login", "/auth/logout", "/public/**", "/api/**", "/error").permitAll()
                         .anyRequest().authenticated()
                 )
                 .logout(logout -> logout
