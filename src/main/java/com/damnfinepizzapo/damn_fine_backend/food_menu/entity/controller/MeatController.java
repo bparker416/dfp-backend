@@ -17,6 +17,9 @@ public class MeatController {
     @Autowired
     public MeatController(MeatService meatService) { this.meatService = meatService; }
 
+    @GetMapping("all")
+    public List<Meat> getAllMeat() { return meatService.getAllMeat(); }
+
     @GetMapping("price-is-three")
     public List<Meat> findByPriceIsThree() { return meatService.findByPriceIsThree(); }
 
