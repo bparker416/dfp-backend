@@ -15,4 +15,6 @@ public interface CheeseRepository extends JpaRepository<Cheese, Integer> {
     List<Cheese> findByPriceIsOne();
     @Query("SELECT c FROM Cheese c WHERE c.cheese_price = 2 AND c.cheese_active = true")
     List<Cheese> findByPriceIsTwo();
+    @Query("SELECT c FROM Cheese c WHERE c.cheese_active = true")
+    List<Cheese> findAllActive();
 }

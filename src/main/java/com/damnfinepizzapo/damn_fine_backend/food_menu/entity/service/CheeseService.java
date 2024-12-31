@@ -28,6 +28,8 @@ public class CheeseService {
         return cheeseRepository.findByPriceIsTwo();
     }
 
+    public List<Cheese> getAllCheese() { return cheeseRepository.findAllActive(); }
+
     public Cheese createCheese(Cheese cheese) {
         return cheeseRepository.save(cheese);
     }

@@ -19,6 +19,9 @@ public class CheeseController {
     @Autowired
     public CheeseController(CheeseService cheeseService) {this.cheeseService = cheeseService;}
 
+    @GetMapping("/all")
+    public List<Cheese> getAllCheese() { return this.cheeseService.getAllCheese(); }
+
     @GetMapping("/price-is-regular")
     public List<Cheese> findByPriceIsRegular() {return cheeseService.findByPriceIsRegular();}
 
