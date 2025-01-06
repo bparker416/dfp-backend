@@ -20,8 +20,9 @@ public class HomeController {
         return "Login page.";
     }
 
-    @GetMapping("/private/updates")
-    public String updatePage() {
+
+    @GetMapping("/updates")
+    public String updatesPage() {
         return "Updates page.";
     }
 

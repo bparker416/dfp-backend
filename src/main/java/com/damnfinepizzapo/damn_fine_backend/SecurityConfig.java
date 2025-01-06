@@ -55,8 +55,10 @@ public class SecurityConfig {
                 )
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login", "/auth/logout", "/public/**", "/api/**", "/error").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/", "/home").permitAll()
+                        .requestMatchers("/api/public/auth/login").permitAll()
+                        .requestMatchers("/updates/**").authenticated()
+                        .anyRequest().permitAll()
                 )
                 .logout(logout -> logout
                         .logoutUrl("/public/home")
@@ -68,7 +70,7 @@ public class SecurityConfig {
                         .invalidateHttpSession(true)
                 )
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                        .sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
                 );
 
         return http.build();
