@@ -15,8 +15,10 @@ public class SandoService {
     public SandoService(SandoRepository sandoRepository) { this.sandoRepository = sandoRepository; }
 
     public List<Sando> getAllSandos() {
-        return sandoRepository.findAllActive();
+        return sandoRepository.findAll();
     }
+
+    public List<Sando> getAllActiveSandos() { return sandoRepository.findAllActive(); }
 
     public Sando createSando(Sando sando) {
         return sandoRepository.save(sando);

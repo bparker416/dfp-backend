@@ -19,8 +19,10 @@ public class LibationService {
     }
 
     public List<Libation> getLibations() {
-        return libationRepository.findAllActive();
+        return libationRepository.findAll();
     }
+
+    public List<Libation> getAllActiveLibations() { return libationRepository.findAllActive(); }
 
     public Libation createLibation(Libation libation) {
         return libationRepository.save(libation);

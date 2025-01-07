@@ -22,6 +22,10 @@ public class HouseCocktailService {
         return houseCocktailRepository.findAllActive();
     }
 
+    public List<HouseCocktail> getAllActiveHouseCocktails() {
+        return houseCocktailRepository.findAllActive();
+    }
+
     public HouseCocktail createHouseCocktail(HouseCocktail houseCocktail) {
         return houseCocktailRepository.save(houseCocktail);
     }

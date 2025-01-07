@@ -16,7 +16,9 @@ public class SaladService {
     @Autowired
     public SaladService(SaladRepository saladRepository) { this.saladRepository = saladRepository; }
 
-    public List<Salad> getAllSalads() { return saladRepository.findAllActive(); }
+    public List<Salad> getAllSalads() { return saladRepository.findAll(); }
+
+    public List<Salad> getAllActiveSalads() { return saladRepository.findAllActive(); }
 
     public Salad createSalad(Salad salad) {
         return saladRepository.save(salad);

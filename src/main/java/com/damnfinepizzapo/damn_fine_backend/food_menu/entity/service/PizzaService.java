@@ -19,8 +19,10 @@ public class PizzaService {
     }
 
     public List<Pizza> getAllPizza() {
-        return pizzaRepository.findAllActive();
+        return pizzaRepository.findAll();
     }
+
+    public List<Pizza> getAllActivePizza() { return pizzaRepository.findAllActive(); }
 
     public Pizza createPizza(Pizza pizza) {
         return pizzaRepository.save(pizza);

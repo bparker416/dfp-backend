@@ -24,7 +24,9 @@ public class MeatService {
         return meatRepository.findByPriceIsFour();
     }
 
-    public List<Meat> getAllMeat() { return meatRepository.findAllActive(); }
+    public List<Meat> getAllMeat() { return meatRepository.findAll(); }
+
+    public List<Meat> getAllActiveMeat() { return meatRepository.findAllActive(); }
 
     public Meat createMeat(Meat meat) { return meatRepository.save(meat); }
 

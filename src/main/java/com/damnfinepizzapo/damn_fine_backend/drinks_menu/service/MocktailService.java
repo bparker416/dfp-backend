@@ -19,8 +19,10 @@ public class MocktailService {
     }
 
     public List<Mocktail> getAllMocktails() {
-        return mocktailRepository.findAllActive();
+        return mocktailRepository.findAll();
     }
+
+    public List<Mocktail> getAllActiveMocktails() { return mocktailRepository.findAllActive(); }
 
     public Mocktail createMocktail(Mocktail mocktail) {
         return mocktailRepository.save(mocktail);

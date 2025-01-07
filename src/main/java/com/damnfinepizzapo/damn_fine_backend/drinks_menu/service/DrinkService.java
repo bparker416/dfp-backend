@@ -19,8 +19,10 @@ public class DrinkService {
     }
 
     public List<Drink> getAllDrinks() {
-        return drinkRepository.findAllActive();
+        return drinkRepository.findAll();
     }
+
+    public List<Drink> getAllActiveDrinks() { return drinkRepository.findAllActive(); }
 
     public Drink createDrink(Drink drink) {
         return drinkRepository.save(drink);

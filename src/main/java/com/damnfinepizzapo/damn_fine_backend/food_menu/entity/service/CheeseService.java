@@ -28,7 +28,9 @@ public class CheeseService {
         return cheeseRepository.findByPriceIsTwo();
     }
 
-    public List<Cheese> getAllCheese() { return cheeseRepository.findAllActive(); }
+    public List<Cheese> getAllCheese() { return cheeseRepository.findAll(); }
+
+    public List<Cheese> getAllActiveCheese() { return cheeseRepository.findAllActive(); }
 
     public Cheese createCheese(Cheese cheese) {
         return cheeseRepository.save(cheese);

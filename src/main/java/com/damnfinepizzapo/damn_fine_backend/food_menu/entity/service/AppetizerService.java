@@ -16,8 +16,10 @@ public class AppetizerService {
     @Autowired
     public AppetizerService(AppetizerRepository appetizerRepository) { this.appetizerRepository = appetizerRepository; }
 
+    public List<Appetizer> getAllActiveAppetizer() { return appetizerRepository.findAllActive(); }
+
     public List<Appetizer> getAllAppetizer() {
-        return appetizerRepository.findAllActive();
+        return appetizerRepository.findAll();
     }
 
     public Appetizer createAppetizer(Appetizer appetizer) {
