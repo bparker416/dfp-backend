@@ -20,6 +20,9 @@ public class MeatController {
     @GetMapping("all")
     public List<Meat> getAllMeat() { return meatService.getAllMeat(); }
 
+    @GetMapping("/active")
+    public List<Meat> getActiveMeat() { return meatService.getAllActiveMeat(); }
+
     @GetMapping("price-is-three")
     public List<Meat> findByPriceIsThree() { return meatService.findByPriceIsThree(); }
 

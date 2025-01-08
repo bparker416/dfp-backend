@@ -17,8 +17,11 @@ public class SaladController {
     @Autowired
     public SaladController(SaladService saladService) { this.saladService = saladService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Salad> getSalads() { return saladService.getAllSalads(); }
+
+    @GetMapping("/active")
+    public List<Salad> getActiveSalads() { return saladService.getAllActiveSalads(); }
 
     @PostMapping
     public Salad createSalad(@RequestBody Salad salad) {

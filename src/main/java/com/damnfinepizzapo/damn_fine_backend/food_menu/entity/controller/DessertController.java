@@ -17,8 +17,11 @@ public class DessertController {
     @Autowired
     public DessertController(DessertService dessertService) { this.dessertService = dessertService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Dessert> getDesserts() { return dessertService.getAllDesserts(); }
+
+    @GetMapping("/active")
+    public List<Dessert> getDessertsActive() { return dessertService.getAllActiveDesserts(); }
 
     @PostMapping
     public Dessert createDessert(@RequestBody Dessert dessert) {

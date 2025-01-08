@@ -17,8 +17,11 @@ public class SandoController {
     @Autowired
     public SandoController(SandoService sandoService) { this.sandoService = sandoService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Sando> getAllSandos() { return sandoService.getAllSandos(); }
+
+    @GetMapping("/active")
+    public List<Sando> getActiveSandos() { return sandoService.getAllActiveSandos(); }
 
     @PostMapping
     public Sando createSando(@RequestBody Sando sando) {

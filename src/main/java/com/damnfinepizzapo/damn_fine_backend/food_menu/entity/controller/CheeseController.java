@@ -22,6 +22,9 @@ public class CheeseController {
     @GetMapping("/all")
     public List<Cheese> getAllCheese() { return this.cheeseService.getAllCheese(); }
 
+    @GetMapping("/active")
+    public List<Cheese> getAllActiveCheese() { return this.cheeseService.getAllActiveCheese(); }
+
     @GetMapping("/price-is-regular")
     public List<Cheese> findByPriceIsRegular() {return cheeseService.findByPriceIsRegular();}
 

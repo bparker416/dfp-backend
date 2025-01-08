@@ -17,8 +17,11 @@ public class MocktailController {
     @Autowired
     public MocktailController(MocktailService mocktailService) { this.mocktailService = mocktailService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Mocktail> getAllMocktails() { return mocktailService.getAllMocktails(); }
+
+    @GetMapping("/active")
+    public List<Mocktail> getActiveMocktails() { return mocktailService.getAllActiveMocktails(); }
 
     @PostMapping
     public Mocktail createMocktail(@RequestBody Mocktail mocktail) {

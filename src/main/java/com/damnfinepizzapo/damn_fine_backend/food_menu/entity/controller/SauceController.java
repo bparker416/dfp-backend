@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/public/sauce/")
+@RequestMapping("/api/public/sauce")
 @CrossOrigin(origins = "http://localhost:4200")
 public class SauceController {
 
@@ -17,8 +17,11 @@ public class SauceController {
     @Autowired
     public SauceController(SauceService sauceService) { this.sauceService = sauceService; }
 
-    @GetMapping("sauce-active")
+    @GetMapping("/all")
     public List<Sauce> getSauces() { return sauceService.getAllSauces(); }
+
+    @GetMapping("/active")
+    public List<Sauce> getActiveSauces() { return sauceService.getAllActiveSauces(); }
 
     @PostMapping
     public Sauce createSauce(@RequestBody Sauce sauce) {

@@ -19,10 +19,13 @@ public class PizzaController {
         this.pizzaService = pizzaService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Pizza> getAllPizza() {
         return pizzaService.getAllPizza();
     }
+
+    @GetMapping("/active")
+    public List<Pizza> getActivePizza() { return pizzaService.getAllActivePizza(); }
 
     @PostMapping
     public Pizza createPizza(@RequestBody Pizza pizza) {

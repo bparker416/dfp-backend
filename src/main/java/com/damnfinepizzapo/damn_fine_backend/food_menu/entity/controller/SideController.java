@@ -17,8 +17,11 @@ public class SideController {
     @Autowired
     public SideController(SideService sideService) { this.sideService = sideService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Side> getAllSide() { return sideService.getAllSide(); }
+
+    @GetMapping("/active")
+    public List<Side> getActiveSide() { return sideService.getAllActiveSide(); }
 
     @PostMapping
     public Side creteSide(@RequestBody Side side) {

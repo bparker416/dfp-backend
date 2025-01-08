@@ -17,8 +17,11 @@ public class AppetizerController {
     @Autowired
     public AppetizerController(AppetizerService appetizerService) { this.appetizerService = appetizerService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Appetizer> getAllAppetizer() { return appetizerService.getAllAppetizer(); }
+
+    @GetMapping("/active")
+    public List<Appetizer> getAllActiveAppetizer() { return appetizerService.getAllActiveAppetizer(); }
 
     @PostMapping
     public Appetizer createAppetizer(@RequestBody Appetizer appetizer) {

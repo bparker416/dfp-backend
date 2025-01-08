@@ -17,8 +17,11 @@ public class VeggieController {
     @Autowired
     public VeggieController(VeggieService veggieService) { this.veggieService = veggieService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Veggie> getVeggies() { return veggieService.getAllVeggies(); }
+
+    @GetMapping("/active")
+    public List<Veggie> getActiveVeggies() { return veggieService.getAllActiveVeggies(); }
 
     @PostMapping
     public Veggie createVeggie(@RequestBody Veggie veggie) {

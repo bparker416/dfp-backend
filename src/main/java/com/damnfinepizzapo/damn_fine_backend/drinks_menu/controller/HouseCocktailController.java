@@ -18,8 +18,11 @@ public class HouseCocktailController {
     @Autowired
     public HouseCocktailController(HouseCocktailService houseCocktailService) { this.houseCocktailService = houseCocktailService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<HouseCocktail> getAllHouseCocktails() { return houseCocktailService.getAllHouseCocktails(); }
+
+    @GetMapping("/active")
+    public List<HouseCocktail> getActiveHouseCocktails() { return houseCocktailService.getAllActiveHouseCocktails(); }
 
     @PostMapping
     public HouseCocktail createHouseCocktail(@RequestBody HouseCocktail houseCocktail) {

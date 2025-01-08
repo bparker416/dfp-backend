@@ -18,7 +18,7 @@ public class DessertService {
 
     public List<Dessert> getAllDesserts() { return dessertRepository.findAll(); }
 
-    public List<Dessert> GetAllActiveDesserts() { return dessertRepository.findAllActive(); }
+    public List<Dessert> getAllActiveDesserts() { return dessertRepository.findAllActive(); }
 
     public Dessert createDessert(Dessert dessert) { return dessertRepository.save(dessert); }
 

@@ -2,7 +2,6 @@ package com.damnfinepizzapo.damn_fine_backend.drinks_menu.controller;
 
 import com.damnfinepizzapo.damn_fine_backend.drinks_menu.entity.Libation;
 import com.damnfinepizzapo.damn_fine_backend.drinks_menu.service.LibationService;
-import com.damnfinepizzapo.damn_fine_backend.food_menu.entity.Appetizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +17,11 @@ public class LibationController {
     @Autowired
     public LibationController(LibationService libationService) { this.libationService = libationService; }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Libation> getAllLibations() { return libationService.getLibations(); }
+
+    @GetMapping("/active")
+    public List<Libation> getActiveLibations() { return libationService.getAllActiveLibations(); }
 
     @PutMapping
     public Libation createLibation(@RequestBody Libation libation) {
