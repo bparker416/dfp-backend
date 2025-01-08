@@ -26,4 +26,9 @@ public class HomeController {
         return "Updates page.";
     }
 
+    @GetMapping("/public/desserts")
+    public String dessertPage() {
+        return "Desserts page.";
+    }
+
 }

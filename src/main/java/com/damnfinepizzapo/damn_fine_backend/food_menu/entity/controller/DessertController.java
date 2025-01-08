@@ -50,5 +50,4 @@ public class DessertController {
     public Dessert toggleDessertActive(@PathVariable int id) {
         return dessertService.toggleDessertActive(id);
     }
-
 }

@@ -9,10 +9,10 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "Dessert")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Dessert {
 
     @Id
@@ -35,6 +35,7 @@ public class Dessert {
     private String additional_text;
 
     @Column(name = "dessert_active")
+    @NotNull
     private Boolean dessert_active;
 
 }

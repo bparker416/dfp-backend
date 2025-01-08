@@ -24,10 +24,7 @@ import java.util.List;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private final CustomUserDetailsService customUserDetailsService;
-
     public SecurityConfig(@Lazy CustomUserDetailsService customUserDetailsService) {
-        this.customUserDetailsService = customUserDetailsService;
     }
 
     @Bean
