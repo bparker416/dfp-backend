@@ -37,7 +37,7 @@ public class AppetizerService {
                     item.setApp_price(appetizer.getApp_price());
                     item.setApp_description(appetizer.getApp_description());
                     item.setAdditional_text(appetizer.getAdditional_text());
-                    item.setAppetizer_active(appetizer.isAppetizer_active());
+                    item.setAppetizer_active(appetizer.getAppetizer_active());
                     return appetizerRepository.save(item);
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
@@ -51,7 +51,7 @@ public class AppetizerService {
     public Appetizer toggleAppetizerActive(int id) {
         return appetizerRepository.findById(id)
                 .map(item -> {
-                    item.setAppetizer_active(!item.isAppetizer_active());
+                    item.setAppetizer_active(!item.getAppetizer_active());
                     return appetizerRepository.save(item);
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));

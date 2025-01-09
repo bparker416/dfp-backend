@@ -26,7 +26,7 @@ public class Appetizer {
     @Column(name = "app_description")
     @NotNull
     private String app_description;
-
+    
     @Column(name = "app_price")
     @NotNull
     private Integer app_price;
@@ -35,6 +35,7 @@ public class Appetizer {
     private String additional_text;
 
     @Column(name = "appetizer_active")
-    private boolean appetizer_active;
+    @NotNull
+    private Boolean appetizer_active;
 
 }
