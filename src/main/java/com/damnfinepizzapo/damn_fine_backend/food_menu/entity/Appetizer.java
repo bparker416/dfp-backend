@@ -26,7 +26,7 @@ public class Appetizer {
     @Column(name = "app_description")
     @NotNull
     private String app_description;
-    
+
     @Column(name = "app_price")
     @NotNull
     private Integer app_price;
