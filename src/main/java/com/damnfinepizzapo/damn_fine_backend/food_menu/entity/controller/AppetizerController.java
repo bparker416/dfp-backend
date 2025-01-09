@@ -44,7 +44,7 @@ public class AppetizerController {
     public void deleteAppetizer(@PathVariable int id) {
         appetizerService.deleteAppetizer(id);
     }
-
+    
     // Endpoint for isActive toggle
     @PutMapping("/{id}/toggle")
     public Appetizer toggleAppetizerActive(@PathVariable int id) {
