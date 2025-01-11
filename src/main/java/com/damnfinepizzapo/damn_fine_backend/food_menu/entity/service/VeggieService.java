@@ -54,4 +54,8 @@ public class VeggieService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
+
+    public List<Veggie> searchVeggie(String veggieName) {
+        return veggieRepository.searchByVeggieName(veggieName);
+    }
 }

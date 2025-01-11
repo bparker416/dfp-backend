@@ -55,4 +55,8 @@ public class PizzaController {
         return pizzaService.togglePizzaActive(id);
     }
 
+    @GetMapping("/search")
+    public List<Pizza> searchPizza(@RequestParam String pizzaName) {
+        return pizzaService.searchPizza(pizzaName);
+    }
 }

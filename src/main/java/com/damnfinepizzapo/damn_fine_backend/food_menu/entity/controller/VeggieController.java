@@ -51,4 +51,8 @@ public class VeggieController {
         return veggieService.toggleVeggieActive(id);
     }
 
+    @GetMapping("/search")
+    public List<Veggie> searchVeggie(@RequestParam String veggieName) {
+        return veggieService.searchVeggie(veggieName);
+    }
 }

@@ -51,4 +51,8 @@ public class SaladController {
         return saladService.toggleSaladActive(id);
     }
 
+    @GetMapping("/search")
+    public List<Salad> searchSalad(@RequestParam String saladName) {
+        return saladService.searchSalad(saladName);
+    }
 }

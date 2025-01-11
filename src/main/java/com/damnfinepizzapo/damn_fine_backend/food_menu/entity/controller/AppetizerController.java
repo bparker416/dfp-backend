@@ -44,11 +44,15 @@ public class AppetizerController {
     public void deleteAppetizer(@PathVariable int id) {
         appetizerService.deleteAppetizer(id);
     }
-    
+
     // Endpoint for isActive toggle
     @PutMapping("/{id}/toggle")
     public Appetizer toggleAppetizerActive(@PathVariable int id) {
         return appetizerService.toggleAppetizerActive(id);
     }
 
+    @GetMapping("/search")
+    public List<Appetizer> searchAppetizer(@RequestParam String appName) {
+        return appetizerService.searchAppetizer(appName);
+    }
 }

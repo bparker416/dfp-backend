@@ -55,4 +55,8 @@ public class SauceService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
+
+    public List<Sauce> searchSauce(String sauceName) {
+        return sauceRepository.searchBySauceName(sauceName);
+    }
 }

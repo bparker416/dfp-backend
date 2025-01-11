@@ -55,4 +55,8 @@ public class SaladService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
+
+    public List<Salad> searchSalad(String saladName) {
+        return saladRepository.searchBySaladName(saladName);
+    }
 }

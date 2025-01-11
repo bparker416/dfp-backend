@@ -50,5 +50,9 @@ public class HouseCocktailController {
     @PutMapping("/{id}/toggle")
     public HouseCocktail toggleHouseCocktailActive(@PathVariable int id) { return houseCocktailService.toggleHouseCocktailActive(id); }
 
+    @GetMapping("/search")
+    public List<HouseCocktail> searchHouseCocktail(@RequestParam String cocktailName) {
+        return houseCocktailService.searchCocktail(cocktailName);
+    }
 }
 

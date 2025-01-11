@@ -52,4 +52,9 @@ public class DrinkController {
         return drinkService.toggleDrinkActive(id);
     }
 
+    @GetMapping("/search")
+    public List<Drink> searchDrink(@RequestParam String drinkName) {
+        return drinkService.searchDrink(drinkName);
+    }
+
 }

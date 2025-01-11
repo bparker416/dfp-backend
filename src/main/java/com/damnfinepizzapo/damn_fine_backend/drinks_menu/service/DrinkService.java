@@ -57,4 +57,8 @@ public class DrinkService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
+
+    public List<Drink> searchDrink(String drinkName) {
+        return drinkRepository.searchByDrinkName(drinkName);
+    }
 }

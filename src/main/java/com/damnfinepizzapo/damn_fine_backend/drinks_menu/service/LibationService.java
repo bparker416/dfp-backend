@@ -57,4 +57,8 @@ public class LibationService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
+
+    public List<Libation> searchLibation(String libationName) {
+        return libationRepository.searchByLibationName(libationName);
+    }
 }
