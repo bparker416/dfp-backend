@@ -14,5 +14,5 @@ public interface HouseCocktailRepository extends JpaRepository<HouseCocktail, In
     @Query("SELECT h FROM HouseCocktail h WHERE h.cocktail_active = true")
     List<HouseCocktail> findAllActive();
     @Query("SELECT h from HouseCocktail h WHERE LOWER(h.cocktail_name) LIKE LOWER(CONCAT('%', :cocktail_name, '%'))")
-    List<HouseCocktail> searchByCocktailName(@Param("cocktail_name") String cocktail_name);
+    List<String> searchByCocktailName(@Param("cocktail_name") String cocktail_name);
 }

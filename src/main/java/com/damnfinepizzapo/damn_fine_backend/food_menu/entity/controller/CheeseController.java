@@ -59,9 +59,4 @@ public class CheeseController {
     // Endpoint for isActive toggle
     @PutMapping("/{id}/toggle")
     public Cheese toggleCheeseActive(@PathVariable int id) { return cheeseService.toggleCheeseActive(id); }
-
-    @GetMapping("/search")
-    public List<Cheese> searchCheese(@RequestParam String cheeseName) {
-        return cheeseService.searchCheese(cheeseName);
-    }
 }

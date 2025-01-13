@@ -14,5 +14,5 @@ public interface DrinkRepository extends JpaRepository<Drink, Integer> {
     @Query("SELECT d FROM Drink d WHERE d.drink_active = true")
     List<Drink> findAllActive();
     @Query("SELECT d from Drink d WHERE LOWER(d.drink_name) LIKE LOWER(CONCAT('%', :drink_name, '%'))")
-    List<Drink> searchByDrinkName(@Param("drink_name") String drink_name);
+    List<String> searchByDrinkName(@Param("drink_name") String drink_name);
 }

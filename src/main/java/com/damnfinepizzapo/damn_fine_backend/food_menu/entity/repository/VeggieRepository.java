@@ -13,5 +13,5 @@ public interface VeggieRepository extends JpaRepository<Veggie, Integer> {
     @Query("SELECT v FROM Veggie v WHERE v.veggie_active = true")
     List<Veggie> findAllActive();
     @Query("SELECT v FROM Veggie v WHERE LOWER(v.veggie_name) LIKE LOWER(CONCAT('%', :veggie_name, '%'))")
-    List<Veggie> searchByVeggieName(@Param("veggie_name") String veggie_name);
+    List<String> searchByVeggieName(@Param("veggie_name") String veggie_name);
 }

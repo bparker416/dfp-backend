@@ -48,9 +48,4 @@ public class SauceController {
     // Endpoint for isActive toggle
     @PutMapping("/{id}/toggle")
     public Sauce toggleSauceActive(@PathVariable int id) { return sauceService.toggleSauceActive(id); }
-
-    @GetMapping("/search")
-    public List<Sauce> searchSauce(@RequestParam String sauceName) {
-        return sauceService.searchSauce(sauceName);
-    }
 }

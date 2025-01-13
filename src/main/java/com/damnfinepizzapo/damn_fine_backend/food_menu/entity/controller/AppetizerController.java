@@ -50,9 +50,4 @@ public class AppetizerController {
     public Appetizer toggleAppetizerActive(@PathVariable int id) {
         return appetizerService.toggleAppetizerActive(id);
     }
-
-    @GetMapping("/search")
-    public List<Appetizer> searchAppetizer(@RequestParam String appName) {
-        return appetizerService.searchAppetizer(appName);
-    }
 }

@@ -48,9 +48,4 @@ public class SideController {
     // Endpoint for isActive_toggle
     @PutMapping("/{id}/toggle")
     public Side toggleSideActive(@PathVariable int id) { return sideService.toggleSideActive(id); }
-
-    @GetMapping("/search")
-    public List<Side> searchSide(@RequestParam String sideName) {
-        return sideService.searchSide(sideName);
-    }
 }

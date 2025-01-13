@@ -13,5 +13,5 @@ public interface PizzaRepository extends JpaRepository<Pizza, Integer> {
     @Query("SELECT p FROM Pizza p WHERE p.pizza_active = true")
     List<Pizza> findAllActive();
     @Query("SELECT p FROM Pizza p WHERE LOWER(p.pizza_name) LIKE LOWER(CONCAT('%', :pizza_name, '%'))")
-    List<Pizza> searchByPizzaName(@Param("pizza_name") String pizza_name);
+    List<String> searchByPizzaName(@Param("pizza_name") String pizza_name);
 }

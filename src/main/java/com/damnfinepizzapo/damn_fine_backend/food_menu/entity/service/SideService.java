@@ -57,7 +57,4 @@ public class SideService {
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
 
-    public List<Side> searchSide(String sideName) {
-        return sideRepository.searchBySideName(sideName);
-    }
 }

@@ -55,8 +55,4 @@ public class MeatService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
-
-    public List<Meat> searchMeat(String meatName) {
-        return meatRepository.searchByMeatName(meatName);
-    }
 }

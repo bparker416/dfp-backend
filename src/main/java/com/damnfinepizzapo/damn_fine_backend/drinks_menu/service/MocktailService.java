@@ -58,7 +58,4 @@ public class MocktailService {
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
 
-    public List<Mocktail> searchMocktail(String mocktailName) {
-        return mocktailRepository.searchByMocktailName(mocktailName);
-    }
 }

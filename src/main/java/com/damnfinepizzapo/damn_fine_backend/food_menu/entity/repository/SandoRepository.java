@@ -13,5 +13,5 @@ public interface SandoRepository extends JpaRepository<Sando, Integer> {
     @Query("SELECT s FROM Sando s WHERE s.sando_active = true")
     List<Sando> findAllActive();
     @Query("SELECT s FROM Sando s WHERE LOWER(s.sando_name) LIKE LOWER(CONCAT('%', :sando_name, '%'))")
-    List<Sando> searchBySandoName(@Param("sando_name") String sando_name);
+    List<String> searchBySandoName(@Param("sando_name") String sando_name);
 }

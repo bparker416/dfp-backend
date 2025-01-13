@@ -15,5 +15,5 @@ public interface LibationRepository extends JpaRepository<Libation, Integer> {
     @Query("SELECT l FROM Libation l WHERE l.libation_active = true")
     List<Libation> findAllActive();
     @Query("SELECT l from Libation l WHERE LOWER(l.libation_name) LIKE LOWER(CONCAT('%', :libation_name, '%'))")
-    List<Libation> searchByLibationName(@Param("libation_name") String libation_name);
+    List<String> searchByLibationName(@Param("libation_name") String libation_name);
 }

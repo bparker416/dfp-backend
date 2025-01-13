@@ -65,7 +65,4 @@ public class CheeseService {
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
 
-    public List<Cheese> searchCheese(String cheeseName) {
-        return cheeseRepository.searchByCheeseName(cheeseName);
-    }
 }

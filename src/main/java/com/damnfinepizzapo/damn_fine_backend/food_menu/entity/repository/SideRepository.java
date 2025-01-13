@@ -13,5 +13,5 @@ public interface SideRepository extends JpaRepository<Side, Integer> {
     @Query("SELECT s FROM Side s WHERE s.side_active = true")
     List<Side> findAllActive();
     @Query("SELECT s FROM Side s WHERE LOWER(s.side_name) LIKE LOWER(CONCAT('%', :side_name, '%'))")
-    List<Side> searchBySideName(@Param("side_name") String side_name);
+    List<String> searchBySideName(@Param("side_name") String side_name);
 }

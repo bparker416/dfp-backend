@@ -48,9 +48,4 @@ public class SandoController {
     // Endpoint for isActive toggle
     @PutMapping("/{id}/toggle")
     public Sando toggleSandoActive(@PathVariable int id) { return sandoService.toggleSandoActive(id); }
-
-    @GetMapping("/search")
-    public List<Sando> searchSando(@RequestParam String sandoName) {
-        return sandoService.searchSando(sandoName);
-    }
 }

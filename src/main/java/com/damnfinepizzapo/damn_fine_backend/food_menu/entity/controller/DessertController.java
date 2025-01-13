@@ -50,9 +50,4 @@ public class DessertController {
     public Dessert toggleDessertActive(@PathVariable int id) {
         return dessertService.toggleDessertActive(id);
     }
-
-    @GetMapping("/search")
-    public List<Dessert> searchDessert(@RequestParam String dessertName) {
-        return dessertService.searchDessert(dessertName);
-    }
 }

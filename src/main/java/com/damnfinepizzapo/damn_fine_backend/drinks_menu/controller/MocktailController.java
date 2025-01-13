@@ -48,9 +48,4 @@ public class MocktailController {
     // End for isActive toggle
     @PutMapping("/{id}/toggle")
     public Mocktail toggleMocktailActive(@PathVariable int id) { return mocktailService.toggleMocktailActive(id); }
-
-    @GetMapping("/search")
-    public List<Mocktail> searchMocktail(@RequestParam String mocktailName) {
-        return mocktailService.searchMocktail(mocktailName);
-    }
 }

@@ -51,8 +51,4 @@ public class DessertService {
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
 
-    public List<Dessert> searchDessert(String dessertName) {
-        return dessertRepository.searchByDessertName(dessertName);
-    }
-
 }

@@ -51,10 +51,4 @@ public class DrinkController {
     public Drink toggleDrinkActive(@PathVariable int id) {
         return drinkService.toggleDrinkActive(id);
     }
-
-    @GetMapping("/search")
-    public List<Drink> searchDrink(@RequestParam String drinkName) {
-        return drinkService.searchDrink(drinkName);
-    }
-
 }

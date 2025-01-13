@@ -57,8 +57,5 @@ public class AppetizerService {
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
 
-    public List<Appetizer> searchAppetizer(String appName) {
-        return appetizerRepository.searchByAppName(appName);
-    }
 
 }

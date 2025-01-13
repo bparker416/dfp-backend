@@ -13,5 +13,5 @@ public interface SauceRepository extends JpaRepository<Sauce, Integer> {
     @Query("SELECT s FROM Sauce s WHERE s.sauce_active = true")
     List<Sauce> findAllActive();
     @Query("SELECT s FROM Sauce s WHERE LOWER(s.sauce_name) LIKE LOWER(CONCAT('%', :sauce_name, '%'))")
-    List<Sauce> searchBySauceName(@Param("sauce_name") String sauce_name);
+    List<String> searchBySauceName(@Param("sauce_name") String sauce_name);
 }

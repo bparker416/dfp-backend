@@ -55,7 +55,4 @@ public class SandoService {
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
 
-    public List<Sando> searchSando(String sandoName) {
-        return sandoRepository.searchBySandoName(sandoName);
-    }
 }

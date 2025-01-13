@@ -56,9 +56,4 @@ public class MeatController {
     public Meat toggleMeatActive(@PathVariable int id) {
         return meatService.toggleMeatActive(id);
     }
-
-    @GetMapping("/search")
-    public List<Meat> searchMeat(@RequestParam String meatName) {
-        return meatService.searchMeat(meatName);
-    }
 }

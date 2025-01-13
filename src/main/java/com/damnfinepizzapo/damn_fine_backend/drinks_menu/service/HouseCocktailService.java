@@ -59,8 +59,4 @@ public class HouseCocktailService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
-
-    public List<HouseCocktail> searchCocktail(String cocktailName) {
-        return houseCocktailRepository.searchByCocktailName(cocktailName);
-    }
 }

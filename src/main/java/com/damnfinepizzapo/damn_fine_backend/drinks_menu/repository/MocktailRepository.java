@@ -14,5 +14,5 @@ public interface MocktailRepository extends JpaRepository<Mocktail, Integer> {
     @Query("SELECT m FROM Mocktail m WHERE m.mocktail_active = true")
     List<Mocktail> findAllActive();
     @Query("SELECT m from Mocktail m WHERE LOWER(m.mocktail_name) LIKE LOWER(CONCAT('%', :mocktail_name, '%'))")
-    List<Mocktail> searchByMocktailName(@Param("mocktail_name") String mocktail_name);
+    List<String> searchByMocktailName(@Param("mocktail_name") String mocktail_name);
 }

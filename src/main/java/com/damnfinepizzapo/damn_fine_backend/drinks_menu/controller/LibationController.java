@@ -49,9 +49,4 @@ public class LibationController {
     // Endpoint for isActive toggle
     @PutMapping("/{id}/toggle")
     public Libation toggleLibationActive(@PathVariable int id) { return libationService.toggleLibationActive(id); }
-
-    @GetMapping("/search")
-    public List<Libation> searchLibation(@RequestParam String libationName) {
-        return libationService.searchLibation(libationName);
-    }
 }
