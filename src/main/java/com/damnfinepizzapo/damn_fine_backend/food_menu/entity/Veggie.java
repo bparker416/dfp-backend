@@ -1,5 +1,6 @@
 package com.damnfinepizzapo.damn_fine_backend.food_menu.entity;
 
+import com.damnfinepizzapo.damn_fine_backend.logging.AuditEntityListener;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -7,7 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
+@EntityListeners(AuditEntityListener.class)
 @Table(name = "veggie")
 @AllArgsConstructor
 @NoArgsConstructor
