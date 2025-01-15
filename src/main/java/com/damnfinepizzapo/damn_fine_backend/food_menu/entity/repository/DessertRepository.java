@@ -12,6 +12,6 @@ import java.util.List;
 public interface DessertRepository extends JpaRepository<Dessert, Integer> {
     @Query("SELECT d FROM Dessert d WHERE d.dessert_active = true")
     List<Dessert> findAllActive();
-    @Query("SELECT d from Dessert d WHERE LOWER(d.dessert_name) LIKE LOWER(CONCAT('%', :dessert_name, '%'))")
+    @Query("SELECT d.dessert_name from Dessert d WHERE LOWER(d.dessert_name) LIKE LOWER(CONCAT('%', :dessert_name, '%'))")
     List<String> searchByDessertName(@Param("dessert_name") String dessert_name);
 }

@@ -59,8 +59,4 @@ public class PizzaService {
                 })
                 .orElseThrow(() -> new RuntimeException("Item not found."));
     }
-
-    public List<Pizza> searchPizza(String pizzaName) {
-        return pizzaRepository.searchByPizzaName(pizzaName);
-    }
 }

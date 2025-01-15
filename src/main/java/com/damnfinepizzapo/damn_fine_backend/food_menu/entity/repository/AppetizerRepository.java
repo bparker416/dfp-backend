@@ -12,6 +12,6 @@ import java.util.List;
 public interface AppetizerRepository extends JpaRepository<Appetizer, Integer> {
     @Query("SELECT a FROM Appetizer a WHERE a.appetizer_active = true")
     List<Appetizer> findAllActive();
-    @Query("SELECT a from Appetizer a WHERE LOWER(a.app_name) LIKE LOWER(CONCAT('%', :app_name, '%'))")
+    @Query("SELECT a.app_name from Appetizer a WHERE LOWER(a.app_name) LIKE LOWER(CONCAT('%', :app_name, '%'))")
     List<String> searchByAppName(@Param("app_name") String app_name);
 }

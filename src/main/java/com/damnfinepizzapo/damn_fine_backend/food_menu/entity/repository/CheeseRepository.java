@@ -19,6 +19,6 @@ public interface CheeseRepository extends JpaRepository<Cheese, Integer> {
     List<Cheese> findByPriceIsTwo();
     @Query("SELECT c FROM Cheese c WHERE c.cheese_active = true")
     List<Cheese> findAllActive();
-    @Query("SELECT c from Cheese c WHERE LOWER(c.cheese_name) LIKE LOWER(CONCAT('%', :cheese_name, '%'))")
+    @Query("SELECT c.cheese_name from Cheese c WHERE LOWER(c.cheese_name) LIKE LOWER(CONCAT('%', :cheese_name, '%'))")
     List<String> searchByCheeseName(@Param("cheese_name") String cheese_name);
 }

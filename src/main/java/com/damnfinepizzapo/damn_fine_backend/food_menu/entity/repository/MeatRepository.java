@@ -16,6 +16,6 @@ public interface MeatRepository extends JpaRepository<Meat, Integer> {
     List<Meat> findByPriceIsFour();
     @Query("SELECT m FROM Meat m WHERE m.meat_active = true")
     List<Meat> findAllActive();
-    @Query("SELECT m from Meat m WHERE LOWER(m.meat_name) LIKE LOWER(CONCAT('%', :meat_name, '%'))")
+    @Query("SELECT m.meat_name from Meat m WHERE LOWER(m.meat_name) LIKE LOWER(CONCAT('%', :meat_name, '%'))")
     List<String> searchByMeatName(@Param("meat_name") String meat_name);
 }
