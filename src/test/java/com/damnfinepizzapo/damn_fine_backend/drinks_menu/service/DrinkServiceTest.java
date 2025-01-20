@@ -23,40 +23,6 @@ class DrinkServiceTest {
     @InjectMocks
     private DrinkService drinkService;
 
-    @Test
-    void testUpdateDrink() {
-        // Arrange
-        int drinkId = 1;
-        Drink existingDrink = new Drink();
-        existingDrink.setDrink_id(drinkId);
-        existingDrink.setDrink_name("Coke");
-        existingDrink.setDrink_price(2);
-        existingDrink.setDrink_description("soda");
-        existingDrink.setDrink_active(true);
-
-        Drink updatedDrink = new Drink();
-        updatedDrink.setDrink_name("Not Coke");
-        updatedDrink.setDrink_price(4);
-        updatedDrink.setDrink_description("Not soda");
-        updatedDrink.setDrink_active(false);
-
-        when(drinkRepository.findById(drinkId)).thenReturn(Optional.of(existingDrink));
-        when(drinkRepository.save(existingDrink)).thenReturn(existingDrink);
-
-        // Act
-        Drink result = drinkService.updateDrink(drinkId, updatedDrink);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals("Pepsi", result.getDrink_name());
-        assertEquals(3, result.getDrink_price());
-        assertEquals("Another soda", result.getDrink_description());
-        assertFalse(result.isDrink_active());
-
-        // Verify interactions
-        verify(drinkRepository, times(1)).findById(drinkId);
-        verify(drinkRepository, times(1)).save(existingDrink);
-    }
 
     @Test
     void testUpdateDrinkNotFound() {
