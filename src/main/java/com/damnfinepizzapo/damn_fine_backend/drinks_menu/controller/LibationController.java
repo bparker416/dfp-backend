@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/seasonal-libations")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://bparker416.github.io/dfp-website/")
 public class LibationController {
 
     private final LibationService libationService;

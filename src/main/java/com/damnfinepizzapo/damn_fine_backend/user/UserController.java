@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/public")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("https://bparker416.github.io/dfp-website/")
 public class UserController {
 
     @Autowired
