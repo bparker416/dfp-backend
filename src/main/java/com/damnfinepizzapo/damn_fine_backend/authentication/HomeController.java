@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://bparker416.github.io/dfp-website")
+@CrossOrigin(origins = "https://gray-sand-09b550110.4.azurestaticapps.net")
 public class HomeController {
 
     @GetMapping("/public/home")

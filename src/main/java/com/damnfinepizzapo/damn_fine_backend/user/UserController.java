@@ -5,11 +5,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/public")
-@CrossOrigin("https://bparker416.github.io/dfp-website")
+@CrossOrigin("https://gray-sand-09b550110.4.azurestaticapps.net")
 public class UserController {
 
+    private final UserService userService;
+
     @Autowired
-    private UserService userService;
+    public UserController(UserService userService) { this.userService = userService; }
 
     @PostMapping("/register")
     public String registerUser(@RequestParam String username, @RequestParam String password) throws IllegalAccessException {
