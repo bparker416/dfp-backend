@@ -43,7 +43,7 @@ public class SecurityConfig {
                 .cors(cors -> cors
                         .configurationSource(request -> {
                             CorsConfiguration config = new CorsConfiguration();
-                            config.setAllowedOrigins(List.of("https://bparker416.github.io"));
+                            config.setAllowedOrigins(List.of("https://bparker416.github.io/dfp-website"));
                             config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                             config.setAllowedHeaders(List.of("*"));
                             config.setAllowCredentials(true);

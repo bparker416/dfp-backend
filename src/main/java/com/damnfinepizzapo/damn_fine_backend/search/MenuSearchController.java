@@ -7,7 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/search")
-@CrossOrigin(origins = "https://bparker416.github.io")
+@CrossOrigin(origins = "https://bparker416.github.io/dfp-website")
 public class MenuSearchController {
     private final MenuSearchService menuSearchService;
 
