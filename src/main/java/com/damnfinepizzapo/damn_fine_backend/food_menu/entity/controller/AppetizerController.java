@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/appetizer")
-@CrossOrigin(origins = "https://bparker416.github.io/dfp-website/")
+@CrossOrigin(origins = "https://bparker416.github.io")
 public class AppetizerController {
 
     private final AppetizerService appetizerService;
