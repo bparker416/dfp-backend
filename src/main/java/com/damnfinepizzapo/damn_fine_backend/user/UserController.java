@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/public")
-@CrossOrigin("https://gray-sand-09b550110.4.azurestaticapps.net")
+@CrossOrigin("https://vercel.com/brandons-projects-bc9e4d60/dfp-website/GHHE4jeXhzmJkBkGmcd6kx7AzvMz")
 public class UserController {
 
     private final UserService userService;

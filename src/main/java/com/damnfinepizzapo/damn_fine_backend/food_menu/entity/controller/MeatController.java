@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/meat")
-@CrossOrigin(origins = "https://gray-sand-09b550110.4.azurestaticapps.net")
+@CrossOrigin(origins = "https://vercel.com/brandons-projects-bc9e4d60/dfp-website/GHHE4jeXhzmJkBkGmcd6kx7AzvMz")
 public class MeatController {
 
     private final MeatService meatService;
