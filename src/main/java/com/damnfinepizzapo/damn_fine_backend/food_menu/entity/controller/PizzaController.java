@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/pizza")
-@CrossOrigin(origins = "https://dfp-website.vercel.app/")
+@CrossOrigin(origins = "https://dfp-website-git-main-brandons-projects-bc9e4d60.vercel.app/")
 public class PizzaController {
 
     private final PizzaService pizzaService;

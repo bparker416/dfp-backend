@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/public")
-@CrossOrigin("https://dfp-website.vercel.app/")
+@CrossOrigin("https://dfp-website-git-main-brandons-projects-bc9e4d60.vercel.app/")
 public class UserController {
 
     @Autowired

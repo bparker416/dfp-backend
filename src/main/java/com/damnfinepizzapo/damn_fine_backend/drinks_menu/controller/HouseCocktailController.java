@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/house-cocktails")
-@CrossOrigin(origins = "https://dfp-website.vercel.app/")
+@CrossOrigin(origins = "https://dfp-website-git-main-brandons-projects-bc9e4d60.vercel.app/")
 public class HouseCocktailController {
 
     private final HouseCocktailService houseCocktailService;
