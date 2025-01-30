@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/cheese")
-@CrossOrigin(origins = "https://bparker416.github.io/dfp-website/")
+@CrossOrigin(origins = "https://dfp-website.vercel.app/")
 public class CheeseController {
 
     private final CheeseService cheeseService;
