@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 @Service
 public class AuditLogService {
-    private static final String LOG_FILE_PATH = "logs/audit-log.txt"; // File location
+    private static final String LOG_FILE_PATH = "/home/LogFiles/audit-log.txt"; // File location
 
     public void logChange(String logEntry) {
         try (FileWriter fileWriter = new FileWriter(LOG_FILE_PATH, true);
