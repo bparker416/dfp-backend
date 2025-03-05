@@ -1,5 +1,5 @@
 # ---------- Stage 1: Build the JAR ----------
-FROM maven:3.8.7-eclipse-temurin-17-jdk-alpine AS build
+FROM maven:3.8.7-eclipse-temurin-17 AS build
 WORKDIR /app
 
 # Copy only the pom.xml first (for efficient caching of dependencies)
