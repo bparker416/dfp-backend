@@ -20,7 +20,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Copy SSl Cert from app
-COPY root.crt /app/src/main/java/com/damnfinepizzapo/damn_fine_backend/root.crt
+COPY root.crt /app/config/root.crt
 
 # Expose port 8080 if you need it for local/Render usage
 EXPOSE 8080
