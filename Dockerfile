@@ -19,7 +19,8 @@ WORKDIR /app
 # Copy the JAR from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
-COPY root.crt /app/root.crt
+# Copy SSl Cert from app
+COPY root.crt /app/src/main/java/com/damnfinepizzapo/damn_fine_backend/root.crt
 
 # Expose port 8080 if you need it for local/Render usage
 EXPOSE 8080
