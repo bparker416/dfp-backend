@@ -19,6 +19,8 @@ WORKDIR /app
 # Copy the JAR from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
+COPY root.crt /app/root.crt
+
 # Expose port 8080 if you need it for local/Render usage
 EXPOSE 8080
 
