@@ -21,7 +21,7 @@ import javax.naming.AuthenticationException;
 
 @RestController
 @RequestMapping("/api/public/auth")
-@CrossOrigin(origins = "https://dfp-website-git-main-brandons-projects-bc9e4d60.vercel.app/")
+@CrossOrigin(origins = "https://dfp-website-brandons-projects-bc9e4d60.vercel.app/")
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
