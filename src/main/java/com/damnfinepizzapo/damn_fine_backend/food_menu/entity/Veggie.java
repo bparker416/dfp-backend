@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Entity
 @EntityListeners(AuditEntityListener.class)
-@Table(name = "veggie")
+@Table(name = "veggie", schema = "dfp_database")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

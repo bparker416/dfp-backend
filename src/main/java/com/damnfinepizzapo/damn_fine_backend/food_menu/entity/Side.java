@@ -11,7 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @EntityListeners(AuditEntityListener.class)
-@Table(name = "Sides")
+@Table(name = "Sides", schema = "dfp_database")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
