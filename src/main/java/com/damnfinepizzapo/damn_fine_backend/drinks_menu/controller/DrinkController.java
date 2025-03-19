@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/public/drinks")
-@CrossOrigin(origins = "https://dfp-website-brandons-projects-bc9e4d60.vercel.app/")
+@CrossOrigin(origins = "https://dfp-website.vercel.app/")
 public class DrinkController {
 
     private final DrinkService drinkService;

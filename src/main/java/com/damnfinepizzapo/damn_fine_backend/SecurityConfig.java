@@ -43,7 +43,7 @@ public class SecurityConfig {
                 .cors(cors -> cors
                         .configurationSource(request -> {
                             CorsConfiguration config = new CorsConfiguration();
-                            config.setAllowedOrigins(List.of("https://dfp-website-brandons-projects-bc9e4d60.vercel.app/"));
+                            config.setAllowedOrigins(List.of("https://dfp-website.vercel.app/"));
                             config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                             config.setAllowedHeaders(List.of("*"));
                             config.setAllowCredentials(true);
